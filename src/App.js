@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { NumericTextBox } from '@progress/kendo-react-inputs'
-import { Buttons } from '@progress/kendo-react-buttons'
+import { Button } from '@progress/kendo-react-buttons'
 import './App.css';
+import '@progress/kendo-theme-default/dist/all.css';
 
 class App extends Component {
   constructor(props){
@@ -35,14 +36,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1 classname='App'> Goals & Iterations </h1>
+        <h1 className='App'> Goals & Iterations </h1>
         <div className='habits-list'>
           <ul>
           {this.state.habits.map((habit, index) => [
             <li key={index}>
               <p> {habit.name} </p>
               <div className='iterations-area'>
-              {[...Array(habit.iterations)].map((iteration, index) => {
+              {[...Array(habit.iteration)].map((iteration, index) => {
                 return <input key={index} type='radio' />
               })}
               </div>
